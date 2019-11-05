@@ -1,0 +1,35 @@
+.my-table{
+    color: #525f7f;
+    /*table-layout: fixed;//表格布局：固定*/
+    /*width: 200px;  //一点呀设置表格的宽度*/
+    /*width: 100%!important;*/
+}
+.my-table .custom-control-label:after,
+.my-table .custom-control-label:before {
+    width: .875rem;
+    height: .875rem;
+}
+.my-table .custom-control-label:before{
+    top: calc(50% - .4375rem);
+    left: -1.5rem;
+    display: block;
+    /*background-color: var(--purple)!important;*/
+}
+.my-table .custom-radio .custom-control-input:checked~.custom-control-label:before {
+    border-color: var(--purple);
+    background-color: var(--purple);
+}
+.my-table .custom-control-label:after{
+    top: calc(50% - .47rem);
+    left: -1.5rem;
+    display: block;
+}
+.my-table .custom-control {
+    position: relative;
+    display: block;
+    min-height: inherit;
+    padding-left: 1.5rem;
+}
+.my-table.table td .card-body{
+    white-space: normal;
+}

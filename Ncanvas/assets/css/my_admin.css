@@ -1,0 +1,35 @@
+.my-table input{
+    box-sizing: border-box;
+    font: inherit;
+    color: inherit;
+    width: 100%;
+    border: 1px solid rgba(94, 114, 228, 0.2);
+    border-radius: 0.15rem;
+}
+.my-add-btn{
+    border: 2px dashed rgba(94, 114, 228, 0.5);
+    height: 2rem;
+    transform: none!important;
+}
+.my-editable-file{
+    width: 1rem;
+    overflow:hidden;
+    white-space: nowrap!important;
+    text-overflow: ellipsis!important;
+}
+
+.avatar.my-editable-avatar{
+    background-image: url(../file/upload.png);
+    background-position:53% 45%;
+    background-size: 50% 50%;
+    background-color: #adb5bd;
+    background-repeat: no-repeat;
+}
+/*.avatar input:hover,*/
+/*.avatar.my-editable-avatar:hover{*/
+/*    cursor:pointer!important;*/
+/*    !*background-color: yellow;*!*/
+/*}*/
+.avatar label:hover{
+    cursor:pointer!important;
+}
