@@ -1,0 +1,20 @@
+[
+  {
+    "cname": "AI",
+    "cid": 1110,
+    "day":"2,3,7",
+    "end":"4",
+    "home_url": "123.md",
+    "syllabus_url": "123.md",
+    "modles_url": "123.md"
+  },
+  {
+    "cname": "AI",
+    "cid": 1111,
+    "days":"2,3,7",
+    "weeks":"4",
+    "home": "123.md",
+    "syl": "123.md",
+    "mod": "123.md"
+  }
+]

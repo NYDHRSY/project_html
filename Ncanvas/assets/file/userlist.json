@@ -1,0 +1,16 @@
+[
+  {
+    "name": "wsjasdasdasd1",
+    "head": "../assets/file/cxk.gif",
+    "uid": 10001,
+    "psw": 12345643,
+    "type": "student"
+  },
+  {
+    "name": "wsjasasdasd2",
+    "head": "../assets/file/cxk.gif",
+    "uid": 10002,
+    "psw": 12345643,
+    "type": "student"
+  }
+]
