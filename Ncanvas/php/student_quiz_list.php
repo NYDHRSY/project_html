@@ -152,6 +152,7 @@
 		"score_total" => $row2['score_total'],
 		"score_gained" =>  $row2['score_gained'],
 		"due" => $row2['deadline'],
+		"link" => $row2['tcontent_url'],
 		"QA" => $QA,
 		"QB" => $QB
 		);

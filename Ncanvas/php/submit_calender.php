@@ -44,7 +44,7 @@
 		$date=mktime(0, 0, 0, 9, 1, 2019);// 初始时间为2019-08-29 
 		for($week = $start_week; $week <= $end_week ; $week++)
 		{
-			$day= $start + (7 * ($week -1) )-65;//
+			$day= $start + (7 * ($week -1) )-68;//
 		//echo $day;
 		//echo " ";
 			$text ="+".$day." "."day";

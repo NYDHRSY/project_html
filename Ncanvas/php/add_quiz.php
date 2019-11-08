@@ -35,7 +35,7 @@ echo"CNT:";
 
      if($ttype=="0"){
 			$QA = $data["QA"];
-			echo "AAAAAA";	
+			//echo "AAAAAA";	
 			for ($j=0; $j < $cnt; $j++){
 
 				$a=$tid;
@@ -65,11 +65,13 @@ echo"CNT:";
 		    }
 		}
 			//$tid="9200";$tname="addtion_test";$deadline="2019/12/11";
- 	         else {
+ 	else {
 				$QB = $data["QB"];
-			for ($j=0; $j < $cnt; $j++){
-
+				echo "CCCCC";
+				echo $cnt;
 				
+			for ($j=0; $j < $cnt; $j++){	
+			echo "OK";	
 				$a=$tid;
 				$b=$j;	
 				$c=(string)($b); 
@@ -78,29 +80,42 @@ echo"CNT:";
 				$title=$QB[$j]['title'];
 				$question_type=$ttype;
 				/*$q="91002";
-				$tid="9100";
+				//$tid="9100";
 				$choiceA="A";
 				$choiceB="B";
 				$choiceC="C";
 				$choiceD="D";
 				$std="A";
-				$title="hello kitty";
-				*/	
+				$title="hello kitty";*/
+				
 				$sql2 = "insert into question (qid,tid,cid,ans,std_score,score,title,uid,question_type) values ('".$q."','".$tid."',".$cid.",'".$ans."',".$std_score.",".$score.",'".$title."',".$uid.",".$question_type.")";
-				$result2 = $con->query($sql2);
+				try {
+
+					$result2 = $con->query($sql2);
+					echo "YES";
+				} catch (Exception $e) {
+					echo "NO";	
+				}
 			
 		    }
+
 		}
 
 
 		$sql3 = "insert into test (tid,uid,cid,tname,ttype,deadline,score_total,score_gained,done) values  ('".$tid."','".$uid."',".$cid.",'".$tname."',".$ttype.",'".$deadline."',".$score_total.",".$score_gained.",".$done.")";
 		$result3 = $con->query($sql3);	
+		$path="../test/";
+		$path2=$path ."".$tid;
+		$md_path = $path2."/";
+		$sql3 = "UPDATE test SET tcontent_url = '".$md_path ."' WHERE tid=$tid and uid=$uid ";
+  		$result3 = $con->query($sql3);
 
     //$cnt=strlen($ans);	
 
   
-    while($row=mysqli_fetch_assoc($result)){
-	    $uid=$row['uid'];	
+    	while($row=mysqli_fetch_assoc($result)){
+			
+	    	$uid=$row['uid'];	
 		echo "U:";	
 		echo $uid;
 	    
@@ -173,7 +188,7 @@ echo"CNT:";
     //$te = "hello world!";
 	
    //echo "AAAA";
-echo $data["QA"];;
+	
 	
 
 

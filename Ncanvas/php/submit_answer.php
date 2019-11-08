@@ -55,8 +55,11 @@
 		$sql7 = "UPDATE question SET ans = '".$tmp."' WHERE qid=$q and uid=$uid ";
 		$result7 = $con->query($sql7);
 		$tmp2=$qa['score'];
-		$sql8 = "UPDATE question SET score = '.$tmp2.' WHERE qid=$q and uid=$uid ";
+		//echo "score:";
+		//echo $tmp2;
+		$sql8 = "UPDATE question SET score = '".$tmp2."' WHERE qid=$q and uid=$uid ";
   		$result8 = $con->query($sql8);
+
 		
 		//echo $q;
 		
@@ -129,6 +132,9 @@ $sql7 = "UPDATE question SET ans = '".$tmp."' WHERE qid=$q and uid=$uid ";
 
 	$sql3 = "UPDATE test SET score_gained = '".$score_gained."' WHERE tid=$tid and uid=$uid ";
   	$result3 = $con->query($sql3);
+	$did=1;
+  	$sql3 = "UPDATE test SET done = '".$did."' WHERE tid=$tid and uid=$uid ";
+  	$result3 = $con->query($sql3);
 	//$JQA = json_encode($QA);
 
 	//$tid="9903";$uid="1024";
@@ -145,7 +151,7 @@ $sql7 = "UPDATE question SET ans = '".$tmp."' WHERE qid=$q and uid=$uid ";
 	if($row3['done']==0){
 		$status="Not Done";
 	}
-	$flag="false";
+	$flag="true";
 	$info = array(
 		"flag" => $flag,
 
@@ -158,7 +164,7 @@ $sql7 = "UPDATE question SET ans = '".$tmp."' WHERE qid=$q and uid=$uid ";
 		"QA" => $QA,
 		"QB" => $QB
 	);
-	
+
 	echo json_encode($info);
 	
 ?>

@@ -1,7 +1,7 @@
 <?php
 	$uid =$_GET["uid"];
 	include_once "mysql.php"; 
-    	$sql = "SELECT * from class where uid=$uid group by cid";
+    	$sql = "SELECT * from class group by cid";
 	$result = $con->query($sql);
 	/*
 	前端传过来cid

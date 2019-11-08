@@ -22,24 +22,14 @@ $file = $_FILES["home"];//接收 主页文件
 	
 	//md_path 保存的是存markdown的路径 以 / 结尾
 	//$tid=123;
-	
-	
+
 	$cid = $_POST["cid"];
 	$uid = $_POST["uid"];
 	$tid = $_POST["tid"];
-	include_once 'mysql.php';
-	$did=1;
-  	$sql3 = "UPDATE test SET done = '".$did."' WHERE tid=$tid and uid=$uid ";
-  	$result3 = $con->query($sql3);
-	
-	$sql3 = "SELECT * from user where uid=$uid ";
-  	$result3 = $con->query($sql3);
-  	$row3=mysqli_fetch_assoc($result3);
-  	$name=$row3["name"];
 	$path="../test/";
 	$path2=$path ."".$tid;
 	$md_path = $path2."/";//服务器路径设定
-	//echo $md_path;
+	echo $md_path;
 	//$md_path = "/opt/lampp/htdocs/phptest/markdown/ ";// 本地的路径
     //判断目录存在否，存在给出提示，不存在则创建目录
     
@@ -56,23 +46,11 @@ $file = $_FILES["home"];//接收 主页文件
     	}
 	$file = $_FILES["ans"];
 	$type = $file['tmp_name'];
-	$file_name = $md_path . "" . $uid. "-" . $tid . "-" . $name."".".docx" ;
+	$file_name = $md_path . "" . $uid. "-" . $tid . "-" . ".txt" ;
 	move_uploaded_file($file['tmp_name'],$file_name);//上传主页文件
 	
 	$ans_path = $file_name;//答案文件路径 保存值数据库
-	//echo $ans_path;
-	$flag="true";
-	$info = array(
-		"flag" => $flag,
-		"tid" => $tid
-
-		
-	);
-	//$file_file = $md_path . "" . $uid. "-" . $tid . "-" . $name."".".docx" ;
-	
-  	
-
-	echo json_encode($info);
+	echo $ans_path;
 
 //move_uploaded_file($file['tmp_name'],$path);//上传文件
 //echo $_POST["tid"];

@@ -60,12 +60,12 @@ $file = $_FILES["home"];//接收 主页文件
 	echo $cov_path;
 
 	
-	//$ctitle = $_POST["cname"];
-	$ctitle="P.E";
+	$ctitle = $_POST["ctitle"];
+	//$ctitle="P.E";
 	$start=1;
-	$end=15;
+	$end=$_POST["weeks"];
 	$did=0;
-	$uid="1024";	
+	$uid=$_POST["uid"];	
 	//$uid = $_POST["uid"];
 	$d=$_POST["days"];
 	echo "days:";
@@ -73,8 +73,7 @@ $file = $_FILES["home"];//接收 主页文件
 		;
 	$hello=explode(',',$d);
 	$e =count($hello);
-$cid=1700;
-
+	
 	echo $e	;
 	$ctext="this is ". $ctitle;
 $sql = "delete from class where cid=$cid";
@@ -82,7 +81,7 @@ $sql = "delete from class where cid=$cid";
 $result = $con->query($sql);
 	for($i=0;$i<count($hello);$i++){
 	//for($i=0;$i<0;$i++){
-		$sql2 = "insert into class (cid,ctitle,start,end,cover_url,home_url,syllabus_url, modles_url,did,uid,day,ctext) values (".$cid.",'".$ctitle."',".$start.",".$end.",'".$cov_path."','".$home_path."','".$syl_path."','".$mod_path."',".$did.",'".$uid."',".$hello[$i].",'".$ctext."')";
+		$sql2 = "insert into class (cid,weekdays,ctitle,start,end,cover_url,home_url,syllabus_url, modles_url,did,uid,day,ctext) values (".$cid.",'".$d."','".$ctitle."',".$start.",".$end.",'".$cov_path."','".$home_path."','".$syl_path."','".$mod_path."',".$did.",'".$uid."',".$hello[$i].",'".$ctext."')";
 		try{	
 			$result2 = $con->query($sql2);
 		}
