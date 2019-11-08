@@ -202,8 +202,8 @@ function renderCourses(url) {
 
 function renderCoursesSelectingList(url) {
     let uid = getCookie('uid');
-    let data_url = "../php/admin_course.php";
-    let sub_select_url = "../php/default.php";
+    let data_url = "../php/student_select_course.php";
+    let sub_select_url = "../php/select_course.php";
     let courseList = getCookie('courseList');
     console.log(courseList);
     loadDataCoursesSelectList(url);
@@ -262,11 +262,13 @@ function renderCoursesSelectingList(url) {
     }
     $(".course-select-form").on('submit',function (e) {
         e.preventDefault();
-        let courses = [];
+        let courses = ["DontRead"];
+        // courses.push();
         $("input[name='course\[\]']:checked").each(function(i){//把所有被选中的复选框的值存入数组
-            courses[i] =$(this).attr('id');
+            courses.push($(this).attr('id'));
         });
         console.log(courses);
+
         $.ajax({
             url:sub_select_url+"?action=submit_selected_courses",
             type:"POST",
@@ -276,12 +278,14 @@ function renderCoursesSelectingList(url) {
             },
             success:function(data){
                 console.log("submited");
-                // console.log(data);
+                console.log(data);
                 data = JSON.parse(data);
                 let flag = (data.flag==="true");
                 console.log(flag);
                 if(flag) {
                     console.log(data);
+                    alert("Success updating your courses selection");
+                    window.location.href="./Course.html";
                 }
                 else {
                     alert("Something went wrong on your browser, the server cannot get you selection, please try again or refresh! (Ctrl + F5)");
@@ -346,7 +350,36 @@ function renderMd2(url){
     console.log("md file rendered");
 }
 
-
+function CourseEditRulesAlert() {
+    /*never checked the input*/
+    if(getCookie('CourseDontShowAgain')==='') {
+        $('#course-modal').modal('show').on('hide.bs.modal',function() {
+            /*Dont show is checked*/
+            if($("#courseDontShowAgain:checked")[0]){
+                setCookie("CourseDontShowAgain",true,30);
+                alert('Be sure that you read all information!');
+            }
+            // else {
+            //     setCookie("CourseDontShowAgain","",30);
+            // }
+        });
+    }
+}
+function quizEditRulesAlert() {
+    /*never checked the input*/
+    if(getCookie('quizDontShowAgain')==='') {
+        $('#quiz-modal').modal('show').on('hide.bs.modal',function() {
+            /*Dont show is checked*/
+            if($("#quizDontShowAgain:checked")[0]){
+                setCookie("quizDontShowAgain",true,30);
+                alert('Be sure that you read all information!');
+            }
+            // else {
+            //     setCookie("CourseDontShowAgain","",30);
+            // }
+        });
+    }
+}
 function validForm(formID) {
     let flag = true;
     $("#"+formID+" input").each(function (i,item) {
