@@ -22,10 +22,10 @@ function getCookie(cname)
 var uid = getCookie('uid');
 var uType = getCookie('type');
 var cid = getCookie('cid');
-// var head = getCookie('head');
-// var name = getCookie('name');
-var head = "../assets/file/head.png";
-var name = "ZHSJ";
+var head = getCookie('head');
+var name = getCookie('name');
+// var head = "../assets/file/head.png";
+// var name = "ZHSJ";
 
 function isLogin() {
     console.log(getCookie('uid'));
@@ -66,7 +66,12 @@ function pageRelocate() {
         $(".navbar-nav a.course-link").attr("href","./Admin_Course.html");
         $(".navbar-nav a.course-quiz-link").attr("href","./Admin_Course_Quiz.html");
     }
-    else if(uType==='teacher' || uType==='student'){
+    else if(uType==='teacher') {
+        $(".navbar-nav a.dash-link").attr("href","./Dashboard.html");
+        $(".navbar-nav a.course-link").attr("href","./Teacher_Course.html");
+        $(".navbar-nav a.course-quiz-link").attr("href","./Teacher_Course_Quiz.html");
+    }
+    else if(uType==='student'){
         $(".navbar-nav a.dash-link").attr("href","./Dashboard.html");
         $(".navbar-nav a.course-link").attr("href","./Course.html");
         $(".navbar-nav a.course-quiz-link").attr("href","./Course_Quiz.html");
