@@ -5,7 +5,7 @@ var uType = getCookie('type');
 function renderQuiz(data_url,sub_QA_url,sub_QB_url) {
     /*load the quiz list*/
 
-    data_url="../php/quiz_course_list.php";
+    data_url="../php/student_quiz_list.php";
     sub_QA_url = "../php/submit_answer.php";
     sub_QB_url="../php/save_QB.php";
     let xmlHttp = new XMLHttpRequest();
@@ -111,7 +111,16 @@ function renderQuiz(data_url,sub_QA_url,sub_QB_url) {
                         let choice = [question.choiceA,question.choiceB,question.choiceC,question.choiceD];
                         let score = question.score;
                         let chose = ["","","",""];
-                        chose[(question.chose)?(question.chose===-1)?0:question.chose:0]="checked";
+                        let chose_index = 0;
+                        if(question.ans==='B') {
+                            chose_index = 1;
+                        }else if(question.ans==='C'){
+                            chose_index = 2;
+                        }else if(question.ans==='D'){
+                            chose_index = 3;
+                        }
+                        // chose[(question.chose)?(question.chose===-1)?0:question.chose:0]="checked";
+                        chose[chose_index]="checked";
 
                         q_list.push("<hr class=\"m-0 mx-3\">");
                         q_list.push("" +
@@ -198,6 +207,7 @@ function renderQuiz(data_url,sub_QA_url,sub_QB_url) {
                     method:"POST",
                     paramName:"ans",
                     maxFiles:1,
+                    acceptedFiles:".doc,.docx",
                     params: {"tid":tid,"uid":uid,"cid":cid},
                     init:function(){
                         this.on("success", function(file, data) {
@@ -205,11 +215,16 @@ function renderQuiz(data_url,sub_QA_url,sub_QB_url) {
                             data = JSON.parse(data);
                             let tid = data.tid;
                             let flag = (data.flag==="true");
+                            console.log(data);
+                            console.log(flag);
+                            console.log(tid);
                             /*debugging*/
                             // let tid = 9901;
                             // let flag = true;
                             if(flag) {
+                                console.log(tid);
                                 alert("File has been uploaded");
+                                console.log(tid);
                                 $("#"+tid +"-row .status span").html("<i class=\"bg-green\"></i>Done");
                                 // $("#"+tid +"-row .score").text(data.score_gained);
                                 $("#"+tid +"-row .score").text("----");
@@ -248,7 +263,16 @@ function renderQuiz(data_url,sub_QA_url,sub_QB_url) {
                         let choice = [question.choiceA,question.choiceB,question.choiceC,question.choiceD];
                         let score = question.score;
                         let chose = ["","","",""];
-                        chose[(question.chose)?(question.chose===-1)?0:question.chose:0]="checked";
+                        let chose_index = 0;
+                        if(question.ans==='B') {
+                            chose_index = 1;
+                        }else if(question.ans==='C'){
+                            chose_index = 2;
+                        }else if(question.ans==='D'){
+                            chose_index = 3;
+                        }
+                        // chose[(question.chose)?(question.chose===-1)?0:question.chose:0]="checked";
+                        chose[chose_index]="checked";
 
                         q_list.push("<hr class=\"m-0 mx-3\">");
                         q_list.push("" +
@@ -336,6 +360,7 @@ function renderQuiz(data_url,sub_QA_url,sub_QB_url) {
                     url: "../test.php",
                     method:"POST",
                     paramName:"file",
+                    acceptedFiles:".doc,.docx",
                     maxFiles:1,
                     params: {"tid": tid},
                     init:function(){
@@ -394,8 +419,9 @@ function renderQuiz(data_url,sub_QA_url,sub_QB_url) {
                     success:function(data){
                         console.log("1 success");
                         // console.log(values);
+                        console.log(data);
                         data = JSON.parse(data);
-                        // console.log(data);
+                        console.log(data);
                         console.log("submited");
                         let tid = data.tid;
                         let flag = (data.flag==="true");

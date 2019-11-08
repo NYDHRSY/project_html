@@ -12,7 +12,7 @@ jQuery(document).ready(function () {
                 renderCalendar(data);
             }
         };
-        xmlHttp.open("GET",url+"?uid=1024",true);
+        xmlHttp.open("GET",url+"?uid="+uid,true);
         xmlHttp.send();
     }
     function renderCalendar(data){
