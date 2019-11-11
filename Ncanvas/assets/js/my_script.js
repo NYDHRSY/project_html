@@ -333,6 +333,7 @@ function renderMd(url){
         xmlHttp.send();
     }
 }
+//render static md file
 function renderMd2(url){
     loadDataMd(url);
     function loadDataMd(url) {

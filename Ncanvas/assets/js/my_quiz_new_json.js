@@ -2,6 +2,8 @@
 var uid = getCookie('uid');
 var cid = getCookie('cid');
 var uType = getCookie('type');
+
+/*render quiz list*/
 function renderQuiz(data_url,sub_QA_url,sub_QB_url) {
     /*load the quiz list*/
 

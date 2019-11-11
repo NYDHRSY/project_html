@@ -1,9 +1,9 @@
 function setCookie(cname,cvalue,exdays)
 {
     exdays = exdays||1;
-    var d = new Date();
+    let d = new Date();
     d.setTime(d.getTime()+(exdays*24*60*60*1000));
-    var expires = "expires="+d.toGMTString();
+    let expires = "expires="+d.toGMTString();
     document.cookie = cname + "=" + cvalue + "; " + expires+"; path=./";
 }
 
@@ -13,7 +13,7 @@ function getCookie(cname)
     var ca = document.cookie.split(';');
     for(var i=0; i<ca.length; i++)
     {
-        var c = ca[i].trim();
+        let c = ca[i].trim();
         if (c.indexOf(name)==0) return c.substring(name.length,c.length);
     }
     return "";
@@ -24,8 +24,6 @@ var uType = getCookie('type');
 var cid = getCookie('cid');
 var head = getCookie('head');
 var name = getCookie('name');
-// var head = "../assets/file/head.png";
-// var name = "ZHSJ";
 
 function isLogin() {
     console.log(getCookie('uid'));
@@ -33,8 +31,9 @@ function isLogin() {
 }
 function isAuth(tType) {
     let uType = getCookie('type');
-    return isLogin() && (tType==="t&s")?(uType==="student"||uType==="teacher"):uType===tType;
+    return isLogin() && ((tType==="t&s")?(uType==="student"||uType==="teacher"):uType===tType);
 }
+
 function pageLocateInit(tType) {
     if(!isAuth(tType)){
         /*用户权限验证失败，强制跳转登录*/
@@ -51,14 +50,10 @@ function pageLocateInit(tType) {
             pageRelocate();
         });
     }
-
 }
 
 /*.navbar-nav*/
 function pageRelocate() {
-    /*debugging*/
-    // let uType = 'student';
-
     let uType = getCookie('type');
     if(uType==='admin'){
         /*the user is an admin, run with the root*/
