@@ -14,26 +14,19 @@
     <link rel="stylesheet" href="../assets/js/plugins/nucleo/css/nucleo.css" />
     <link rel="stylesheet" href="../assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css" />
     <!-- CSS Files -->
-    <!--    <link rel="stylesheet" href="../assets/css/argon-dashboard.css?v=1.1.0"/>-->
     <link rel="stylesheet" href="../assets/css/argon-dashboard.min.css?v=1.1.0" />
     <link rel="stylesheet" href="../assets/css/my_style.css">
     <link rel="stylesheet" href="../assets/css/my_table_style.css">
     <link rel="stylesheet" href="../assets/css/my_admin.css">
-    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
-    <title>Hello, world!</title>
+    <title>Admin_Dashboard</title>
     <!-- Core -->
     <script src="../assets/js/plugins/jquery/dist/jquery.min.js"></script>
     <script src="../assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!--  JS -->
     <script src="../assets/js/argon-dashboard.min.js"></script>
-    <script src="../assets/js/bootstrap-waterfall.js"></script>
+    <!-- JS -->
     <script src="../assets/js/my_page_control.js"></script>
     <script src="../assets/js/my_admin.js"></script>
     <script src="../cz/js_cz/cz_logout.js"></script>
-    <script type="text/javascript">
-        pageLocateInit('admin');
-        renderUserData();
-    </script>
 </head>
 
 <body>
@@ -61,14 +54,6 @@
                         <div class=" dropdown-header noti-title">
                             <h6 class="text-overflow m-0">Welcome!</h6>
                         </div>
-<!--                        <a href="Calendar.html" class="dropdown-item">-->
-<!--                            <i class="ni ni-calendar-grid-58"></i>-->
-<!--                            <span>Activity</span>-->
-<!--                        </a>-->
-<!--                        <a href="Inbox.html" class="dropdown-item">-->
-<!--                            <i class="ni ni-email-83"></i>-->
-<!--                            <span>Inbox</span>-->
-<!--                        </a>-->
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item logout-btn">
                             <i class="ni ni-user-run"></i>
@@ -105,21 +90,6 @@
                             <i class="fas fa-tachometer-alt "></i> Dashboard
                         </a>
                     </li>
-<!--                    <li class="nav-item">-->
-<!--                        <a class="nav-link text-purple course-link" href="Admin_Course.html">-->
-<!--                            <i class="ni ni-book-bookmark"></i> Course-->
-<!--                        </a>-->
-<!--                    </li>-->
-<!--                    <li class="nav-item">-->
-<!--                        <a class="nav-link text-green" href="Calendar.html">-->
-<!--                            <i class="ni ni-calendar-grid-58 "></i> Calendar-->
-<!--                        </a>-->
-<!--                    </li>-->
-<!--                    <li class="nav-item">-->
-<!--                        <a class="nav-link text-teal" href="Inbox.html">-->
-<!--                            <i class="ni ni-email-83 "></i> Inbox-->
-<!--                        </a>-->
-<!--                    </li>-->
                 </ul>
                 <!-- Divider -->
                 <hr class="my-3">
@@ -146,7 +116,7 @@
         <nav class="navbar navbar-top navbar-expand-md navbar-dark bg-blue d-none d-md-block" id="navbar-main">
             <div class="container-fluid ">
                 <!-- Title -->
-                <a class="h4 mb-0 text-white text-uppercase " href="Dashboard_Admin.html">Admin</a>
+                <a class="h4 mb-0 text-white text-uppercase " href="Admin_Dashboard.html">Admin</a>
                 <!-- User -->
                 <ul class="navbar-nav align-items-center d-none d-md-flex nav-head-container" id="nav-head-container">
                     <li class="nav-item dropdown">
@@ -164,16 +134,8 @@
                             <div class=" dropdown-header noti-title ">
                                 <h6 class="text-overflow m-0">Welcome!</h6>
                             </div>
-<!--                            <a href="Calendar.html" class="dropdown-item">-->
-<!--                                <i class="ni ni-calendar-grid-58"></i>-->
-<!--                                <span>Activity</span>-->
-<!--                            </a>-->
-<!--                            <a href="Inbox.html" class="dropdown-item">-->
-<!--                                <i class="ni ni-email-83"></i>-->
-<!--                                <span>Inbox</span>-->
-<!--                            </a>-->
                             <div class="dropdown-divider"></div>
-                            <a href="#!" class="dropdown-item logout-btn">
+                            <a href="#" class="dropdown-item logout-btn">
                                 <i class="ni ni-user-run"></i>
                                 <span>Logout</span>
                             </a>
@@ -183,7 +145,7 @@
             </div>
         </nav>
         <!-- End Navbar -->
-        <!--header-->
+        <!-- Container of the user table -->
         <div class="container-fluid display-container">
             <div class="card table-responsive mt-3">
                 <form action="" id="user-list-form">
@@ -209,10 +171,14 @@
             </div>
         </div>
     </div>
-    <script>
+    <script type="text/javascript">
+        /*isLogin & isAuth*/
+        pageLocateInit('admin');
+        /*render user name, avatar*/
+        renderUserData();
+        /*render the table*/
         $(document).ready(function() {
-            //renderAdminUserlist("../assets/file/userlist.json");// cz
-            renderAdminUserlisttest();// cz
+            renderAdminUserlist();
         });
     </script>
 </body>

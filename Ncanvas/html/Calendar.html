@@ -14,19 +14,16 @@
     <link rel="stylesheet" href="../assets/js/plugins/nucleo/css/nucleo.css"/>
     <link rel="stylesheet" href="../assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css"/>
     <!-- CSS Files -->
-<!--    <link rel="stylesheet" href="../assets/css/argon-dashboard.css?v=1.1.0"/>-->
     <link rel="stylesheet" href="../assets/css/argon-dashboard.min.css?v=1.1.0"/>
     <link rel="stylesheet" href="../assets/css/fullcalendar.css">
     <link rel="stylesheet" href="../assets/css/my_style.css">
-    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
-    <title>Hello, world!</title>
+    <title>Calendar</title>
     <!-- Core -->
     <script src="../assets/js/plugins/jquery/dist/jquery.min.js"></script>
     <script src="../assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!--  JS -->
     <script src="../assets/js/argon-dashboard.min.js"></script>
     <script src="../assets/js/bootstrap-waterfall.js"></script>
-<!--    <script src="../assets/js/fullcalendar.min.js"></script>-->
     <script src="../assets/js/moment.js_2.22.2_moment.js"></script>
     <script src="../assets/js/fullcalendar_3.9.0_fullcalendar.js"></script>
     <!--fc-->
@@ -45,7 +42,7 @@
     <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
         <div class="container-fluid">
             <!-- Toggler -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main"
+            <button id="collapse-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main"
                     aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -54,17 +51,16 @@
                 <img src="../assets/img/brand/brand-logo-tr.png" class="navbar-brand-img" alt="...">
             </a>
             <!-- User -->
-            <ul class="nav align-items-center d-md-none">
+            <ul class="nav align-items-center d-md-none" id="calender-user-dropdown">
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false">
+                    <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="media align-items-center">
                             <span class="avatar avatar-sm rounded-circle">
                                 <img alt="User" src="">
                             </span>
                         </div>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                    <div  class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
                         <div class=" dropdown-header noti-title">
                             <h6 class="text-overflow m-0">Welcome!</h6>
                         </div>
@@ -87,7 +83,7 @@
                 </li>
             </ul>
             <!-- Collapse -->
-            <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+            <div class="collapse navbar-collapse " id="sidenav-collapse-main">
                 <!-- Collapse header -->
                 <div class="navbar-collapse-header d-md-none">
                     <div class="row">
@@ -202,7 +198,7 @@
             <div class="row">
                 <div class="card p-0 mt-3 col-12">
                     <div class="card-body p-2 ">
-                        <div class="calendar" id="calendar"></div>
+                        <div class="calendar" id="calendar" ></div>
                     </div>
                 </div>
             </div>

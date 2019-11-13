@@ -14,24 +14,19 @@
     <link rel="stylesheet" href="../assets/js/plugins/nucleo/css/nucleo.css"/>
     <link rel="stylesheet" href="../assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css"/>
     <!-- CSS Files -->
-    <!--    <link rel="stylesheet" href="../assets/css/argon-dashboard.css?v=1.1.0"/>-->
     <link rel="stylesheet" href="../assets/css/argon-dashboard.min.css?v=1.1.0"/>
     <link rel="stylesheet" href="../assets/css/my_style.css">
-    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
-    <title>Hello, world!</title>
+    <title>Dashboard</title>
     <!-- Core -->
     <script src="../assets/js/plugins/jquery/dist/jquery.min.js"></script>
     <script src="../assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!--  JS -->
     <script src="../assets/js/argon-dashboard.min.js"></script>
     <script src="../assets/js/bootstrap-waterfall.js"></script>
+    <!--  JS -->
     <script src="../assets/js/my_page_control.js"></script>
     <script src="../assets/js/my_script.js"></script>
     <script src="../cz/js_cz/cz_logout.js"></script>
-    <script type="text/javascript">
-        pageLocateInit('t&s');
-        renderUserData();
-    </script>
+
 </head>
 
 <body>
@@ -185,51 +180,17 @@
             </div>
         </nav>
         <!-- End Navbar -->
-        <!--header-->
+        <!-- Container -->
         <div class="container-fluid display-container" >
             <div class="row">
                 <!-- courses -->
                 <div class="col-lg-8 col-xl-9">
                     <div class="row" id="course-container">
-                        <!--course container-->
-<!--                        <div class="col-10 col-sm-6 col-xl-4 offset-1 offset-sm-0 p-3 course_container">-->
-<!--                            <a href="Course_Home.html" title="" id="1000">-->
-<!--                                <div class="card border-0 shadow&#45;&#45;hover">-->
-<!--                                    <img class="card-img-top" src="../assets/img/courses/tmp1.jpg" alt="Course img">-->
-<!--                                    <div class="card-body p-2 px-3">-->
-<!--                                        <h4 class="card-title">Algorithms</h4>-->
-<!--                                        <p class="card-text">Algorithms asd asd asd asd asd asd asd as dasd asd asd asd asdby Shijie Wen zhen niu bi ya yay yay </p>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                        <div class="col-10 col-sm-6 col-xl-4 offset-1 offset-sm-0 p-3 course_container">-->
-<!--                            <a href="Course_Home.html" title="">-->
-<!--                                <div class="card border-0 shadow&#45;&#45;hover">-->
-<!--                                    <img class="card-img-top" src="../assets/img/courses/tmp1.jpg" alt="Course img">-->
-<!--                                    <div class="card-body p-2 px-3">-->
-<!--                                        <h4 class="card-title">Algorithms</h4>-->
-<!--                                        <p class="card-text">Algorithms asd asd asd asd asd asd asd as dasd asd asd asd asdby Shijie Wen zhen niu bi ya yay yay </p>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                        <div class="col-10 col-sm-6 col-xl-4 offset-1 offset-sm-0 p-3 course_container">-->
-<!--                            <a href="Course_Home.html" title="">-->
-<!--                                <div class="card border-0 shadow&#45;&#45;hover">-->
-<!--                                    <img class="card-img-top" src="../assets/img/courses/tmp1.jpg" alt="Course img">-->
-<!--                                    <div class="card-body p-2 px-3">-->
-<!--                                        <h4 class="card-title">Algorithms</h4>-->
-<!--                                        <p class="card-text">Algorithms asd asd asd asd asd asd asd as dasd asd asd asd asdby Shijie Wen zhen niu bi ya yay yay </p>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </a>-->
-<!--                        </div>-->
+                    <!--course container-->
                     </div>
                 </div>
                 <!--todolist-->
                 <div class="d-none d-lg-block col-lg-4 col-xl-3">
-                    <!--choice 2 list -->
                     <div class="todolist align-items-center">
                         <h2 class="text-primary">To Do</h2>
                         <ul class="list-group" id="todo">
@@ -249,13 +210,13 @@
 <!--                            </li>-->
                         </ul>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-    </div>
-    <script>
+    <script type="text/javascript">
+        pageLocateInit('t&s');
+        renderUserData();
         $(document).ready(function () {
             renderDashboardCourses("../php/dashboard.php");
             renderDashboardTodo("../php/todolist.php");

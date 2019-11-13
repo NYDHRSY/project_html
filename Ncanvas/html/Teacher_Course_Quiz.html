@@ -14,35 +14,25 @@
     <link rel="stylesheet" href="../assets/js/plugins/nucleo/css/nucleo.css"/>
     <link rel="stylesheet" href="../assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css"/>
     <!-- CSS Files -->
-    <!--    <link rel="stylesheet" href="../assets/css/argon-dashboard.css?v=1.1.0"/>-->
     <link rel="stylesheet" href="../assets/css/argon-dashboard.min.css"/>
     <link rel="stylesheet" href="../assets/dropzone/dist/min/dropzone.min.css">
-<!--    <link rel="stylesheet" href="../assets/css/argon-pro.min.css"/>-->
     <link rel="stylesheet" href="../assets/css/my_style.css">
     <link rel="stylesheet" href="../assets/css/my_table_style.css">
     <link rel="stylesheet" href="../assets/css/my_dropzone_style.css">
     <link rel="stylesheet" href="../assets/css/my_admin.css">
 
-    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
-    <title>Hello, world!</title>
+    <title>Teacher Course Quiz</title>
+
     <!-- Core -->
     <script src="../assets/js/plugins/jquery/dist/jquery.min.js"></script>
     <script src="../assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!--  JS -->
     <script src="../assets/js/argon-dashboard.min.js"></script>
-<!--    <script src="../assets/js/argon-pro.min.js"></script>-->
     <script src="../assets/dropzone/dist/min/dropzone.min.js"></script>
-<!--    <script src="../assets/js/bootstrap-waterfall.js"></script>-->
-<!--    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>-->
+    <!--  JS -->
     <script src="../assets/js/my_page_control.js"></script>
     <script src="../assets/js/my_script.js"></script>
     <script src="../assets/js/my_admin_quiz.js"></script>
     <script src="../cz/js_cz/cz_logout.js"></script>
-
-    <script type="text/javascript">
-        pageLocateInit('teacher');
-        renderUserData();
-    </script>
 
 </head>
 
@@ -97,7 +87,7 @@
                         <!--brand img-->
                         <div class="col-6  collapse-brand">
                             <a class="" href="#">
-                                <img src="../assets/img/brand/brand-logo-tr.png">
+                                <img src="../assets/img/brand/brand-logo-tr.png" alt="JLU logo">
                             </a>
                         </div>
                         <div class="col-6 collapse-close">
@@ -145,7 +135,7 @@
                                     </a>
                                 </li>
                                 <li class="collapse-menu-item" style="background-color: #8360d6;">
-                                    <a class="collapse-menu-link text-white admin-course-quiz-link active" href="Admin_Course_Quiz.html" >
+                                    <a class="collapse-menu-link text-white admin-course-quiz-link active" href="Teacher_Course_Quiz.html" >
                                         Quiz
                                     </a>
                                 </li>
@@ -217,7 +207,7 @@
 
                             <div class="dropdown-divider"></div>
 
-                            <a href="#!" class="dropdown-item logout-btn">
+                            <a href="#" class="dropdown-item logout-btn">
                                 <i class="ni ni-user-run"></i>
                                 <span>Logout</span>
                             </a>
@@ -316,14 +306,12 @@
 
     </div>
     <script type="text/javascript">
+        pageLocateInit('teacher');
+        renderUserData();
         $(document).ready(function() {
             renderTeacherQuizlist();
-
+            quizEditRulesAlert();
         });
-        quizEditRulesAlert();
-
-
-
     </script>
 </body>
 

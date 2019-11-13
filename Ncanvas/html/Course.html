@@ -14,23 +14,18 @@
     <link rel="stylesheet" href="../assets/js/plugins/nucleo/css/nucleo.css"/>
     <link rel="stylesheet" href="../assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css"/>
     <!-- CSS Files -->
-    <!--    <link rel="stylesheet" href="../assets/css/argon-dashboard.css?v=1.1.0"/>-->
     <link rel="stylesheet" href="../assets/css/argon-dashboard.min.css?v=1.1.0"/>
     <link rel="stylesheet" href="../assets/css/my_style.css">
-    <title>Hello, world!</title>
+    <title>Course</title>
     <!-- Core -->
     <script src="../assets/js/plugins/jquery/dist/jquery.min.js"></script>
     <script src="../assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!--  JS -->
     <script src="../assets/js/argon-dashboard.min.js"></script>
     <script src="../assets/js/bootstrap-waterfall.js"></script>
+    <!--  JS -->
     <script src="../assets/js/my_page_control.js"></script>
     <script src="../assets/js/my_script.js"></script>
     <script src="../cz/js_cz/cz_logout.js"></script>
-    <script type="text/javascript">
-        pageLocateInit("t&s");
-        renderUserData();
-    </script>
 </head>
 
 <body>
@@ -84,7 +79,7 @@
                         <!--brand img-->
                         <div class="col-6  collapse-brand">
                             <a class="" href="#">
-                                <img src="../assets/img/brand/brand-logo-tr.png">
+                                <img src="../assets/img/brand/brand-logo-tr.png" alt="JLU logo">
                             </a>
                         </div>
                         <div class="col-6 collapse-close">
@@ -184,7 +179,7 @@
             </div>
         </nav>
         <!-- End Navbar -->
-        <!--header-->
+        <!-- Courses Container -->
         <div class="container-fluid display-container" >
             <!-- courses choice 1 -->
             <div class="row" id="course-container">
@@ -192,7 +187,9 @@
             <a class="btn btn-sm w-100 shadow-none my-add-link" href="Course_Select.html">+</a>
         </div>
     </div>
-    <script>
+    <script type="text/javascript">
+        pageLocateInit("t&s");
+        renderUserData();
         $(document).ready(function () {
             renderCourses("../php/dashboard.php");
         });

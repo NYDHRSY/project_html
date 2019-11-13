@@ -14,41 +14,29 @@
     <link rel="stylesheet" href="../assets/js/plugins/nucleo/css/nucleo.css"/>
     <link rel="stylesheet" href="../assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css"/>
     <!-- CSS Files -->
-    <!--    <link rel="stylesheet" href="../assets/css/argon-dashboard.css?v=1.1.0"/>-->
     <link rel="stylesheet" href="../assets/css/argon-dashboard.min.css?v=1.1.0"/>
     <link rel="stylesheet" href="../assets/css/my_style.css">
-    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="../assets/css/my_discussion_style.css">
     <title>Hello, world!</title>
     <!-- Core -->
     <script src="../assets/js/plugins/jquery/dist/jquery.min.js"></script>
     <script src="../assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!--  JS -->
     <script src="../assets/js/argon-dashboard.min.js"></script>
-<!--    <script src="../assets/js/bootstrap-waterfall.js"></script>-->
+    <!--  JS -->
     <script src="../assets/js/my_page_control.js"></script>
     <script src="../assets/js/my_script.js"></script>
+    <script src="../assets/js/my_discussion_script.js"></script>
     <!-- cz -->
-    <script src="../cz/js_cz/cz_discussion.js"></script>
     <script src="../cz/js_cz/cz_cookie.js"></script>
-
     <script src="../cz/js_cz/cz_logout.js"></script>
-    <script type="text/javascript">
-        pageLocateInit(getCookie('type'));
-        renderUserData();
-    </script>
-    <style>
-        .user{float:left;color:blue;}
-        .time{float:right;color:#999;}
-    </style>
-
-
 </head>
 
-<body onload="load_discussion()">
+<body>
     <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
         <div class="container-fluid">
             <!-- Toggler -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main"
+                    aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- Brand -->
@@ -57,19 +45,9 @@
             </a>
             <!-- User -->
             <ul class="nav align-items-center d-md-none">
-                <!--                <li class="nav-item dropdown">-->
-                <!--                    <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-                <!--                        <i class="ni ni-bell-55"></i>-->
-                <!--                    </a>-->
-                <!--                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right" aria-labelledby="navbar-default_dropdown_1">-->
-                <!--                        <a class="dropdown-item" href="#">Action</a>-->
-                <!--                        <a class="dropdown-item" href="#">Another action</a>-->
-                <!--                        <div class="dropdown-divider"></div>-->
-                <!--                        <a class="dropdown-item" href="#">Something else here</a>-->
-                <!--                    </div>-->
-                <!--                </li>-->
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">
                         <div class="media align-items-center">
                             <span class="avatar avatar-sm rounded-circle">
                                 <img alt="User" src="">
@@ -106,11 +84,13 @@
                         <!--brand img-->
                         <div class="col-6  collapse-brand">
                             <a class="" href="#">
-                                <img src="../assets/img/brand/brand-logo-tr.png">
+                                <img src="../assets/img/brand/brand-logo-tr.png" alt="JLU logo">
                             </a>
                         </div>
                         <div class="col-6 collapse-close">
-                            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+                            <button type="button" class="navbar-toggler" data-toggle="collapse"
+                                    data-target="#sidenav-collapse-main" aria-controls="sidenav-main"
+                                    aria-expanded="false" aria-label="Toggle sidenav">
                                 <span></span>
                                 <span></span>
                             </button>
@@ -127,34 +107,35 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active text-purple" href="#collapseMenu-course" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">
+                        <a class="nav-link active text-purple" href="#collapseMenu-course" role="button"
+                           data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">
                             <i class="ni ni-book-bookmark"></i> Course
                         </a>
                         <div class="collapse" id="collapseMenu-course">
                             <hr class="m-0 p-0 collapse-menu-shadow">
                             <ul class="collapse-menu">
                                 <li class="collapse-menu-item " style="background-color: #8360d6;">
-                                    <a class="collapse-menu-link text-white" href="Course_Home.html" >
+                                    <a class="collapse-menu-link text-white" href="Course_Home.html">
                                         Home
                                     </a>
                                 </li>
                                 <li class="collapse-menu-item" style="background-color: #8360d6;">
-                                    <a class="collapse-menu-link text-white active" href="Course_Syllabus.html" >
+                                    <a class="collapse-menu-link text-white active" href="Course_Syllabus.html">
                                         Syllabus
                                     </a>
                                 </li>
                                 <li class="collapse-menu-item" style="background-color: #8360d6;">
-                                    <a class="collapse-menu-link text-white" href="Course_Modules.html" >
+                                    <a class="collapse-menu-link text-white" href="Course_Modules.html">
                                         Modules
                                     </a>
                                 </li>
                                 <li class="collapse-menu-item" style="background-color: #8360d6;">
-                                    <a class="collapse-menu-link text-white" href="Course_Discussion.html" >
+                                    <a class="collapse-menu-link text-white" href="Course_Discussion.html">
                                         Discussion
                                     </a>
                                 </li>
                                 <li class="collapse-menu-item" style="background-color: #8360d6;">
-                                    <a class="collapse-menu-link text-white" href="Course_Quiz.html" >
+                                    <a class="collapse-menu-link text-white" href="Course_Quiz.html">
                                         Quiz
                                     </a>
                                 </li>
@@ -201,7 +182,8 @@
                 <!-- User -->
                 <ul class="navbar-nav align-items-center d-none d-md-flex nav-head-container" id="nav-head-container">
                     <li class="nav-item dropdown">
-                        <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                           aria-expanded="false">
                             <div class="media align-items-center">
                                 <span class="avatar avatar-sm rounded-circle" style="overflow: hidden">
                                     <img alt="User" src="">
@@ -226,7 +208,7 @@
 
                             <div class="dropdown-divider"></div>
 
-                            <a href="#!" class="dropdown-item logout-btn">
+                            <a href="#" class="dropdown-item logout-btn">
                                 <i class="ni ni-user-run"></i>
                                 <span>Logout</span>
                             </a>
@@ -236,41 +218,34 @@
             </div>
         </nav>
         <!-- End Navbar -->
-        <!--header-->
-<!--        <div class="jumbotron text-center" style="margin-bottom:auto;">-->
-            <!--                <form action="" method='get'>-->
-            <!--                    &lt;!&ndash;                            <tr>&ndash;&gt;-->
-            <!--                    &lt;!&ndash;                            <td></td>&ndash;&gt;-->
-            <!--                    <textarea name="reworkmes"   cols="40"   rows="4"   style="OVERFLOW:   hidden"></textarea>-->
-            <!--                    &lt;!&ndash;                            </tr>&ndash;&gt;-->
-            <!--                    <input type='text' name='input_words' />-->
-            <!--                    &lt;!&ndash;                            <input type='text' name='bb' />&ndash;&gt;-->
-            <!--                    <input type='submit' value='发表留言'/>-->
-            <!--                </form>-->
-
-<!--        </div>-->
+        <!-- discussion container-->
         <div class="container-fluid display-container" id="discussion">
-<!--            <p>-->
-<!--                <p><strong>用户名</strong> <small>留言时间</small></p>-->
-<!--                <p>留言内容</p>-->
-
-<!--            </p>-->
-<!--            <p>-->
-<!--            <p><strong>用户名</strong> <small>留言时间</small></p>-->
-<!--            <p>留言内容</p>-->
-
-<!--            </p>-->
-            <form role="form">
-                <br />
-                <textarea id="input_words" class="form-control" rows="4"></textarea>
-                <!--                        <label for="name">发表留言</label>-->
-                <div  style="text-align: center">
-                    <button  id="submit_content" type='button' onclick="submit_discussion()">发表留言</button>
+            <div class="card mt-4 mt-md-0 p-4 row">
+                <div class="" id="discussion-display">
+                    <ul id="list_group" class="list-group">
+                    </ul>
                 </div>
-                <!--        </div>-->
-            </form>
+                <hr class="my-4">
+                <div class="" id="discussion-form-container">
+                    <form role="form">
+                        <textarea id="input_words" class="form-control" rows="4"></textarea>
+                        <div class="text-right mt-3">
+                            <button class="btn p-2 px-3 bg-purple border-0 text-white" id="submit_content" type='button'>
+                                <i class="fas fa-paper-plane"></i>
+                                <span class="mr-2 text-uppercase">Send</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-
+    <script type="text/javascript">
+        pageLocateInit(getCookie('type'));
+        renderUserData();
+        $(document).ready(function () {
+            renderDiscussion();
+        })
+    </script>
 </body>
 </html>

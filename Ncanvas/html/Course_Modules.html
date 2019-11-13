@@ -14,26 +14,18 @@
     <link rel="stylesheet" href="../assets/js/plugins/nucleo/css/nucleo.css"/>
     <link rel="stylesheet" href="../assets/js/plugins/@fortawesome/fontawesome-free/css/all.min.css"/>
     <!-- CSS Files -->
-    <!--    <link rel="stylesheet" href="../assets/css/argon-dashboard.css?v=1.1.0"/>-->
     <link rel="stylesheet" href="../assets/css/argon-dashboard.min.css?v=1.1.0"/>
     <link rel="stylesheet" href="../assets/css/my_style.css">
-    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
-    <title>Hello, world!</title>
+    <title>Course Modules</title>
     <!-- Core -->
     <script src="../assets/js/plugins/jquery/dist/jquery.min.js"></script>
     <script src="../assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!--  JS -->
     <script src="../assets/js/argon-dashboard.min.js"></script>
-<!--    <script src="../assets/js/bootstrap-waterfall.js"></script>-->
     <script src="../assets/js/marked.min.js"></script>
+    <!--  JS -->
     <script src="../assets/js/my_page_control.js"></script>
     <script src="../assets/js/my_script.js"></script>
     <script src="../cz/js_cz/cz_logout.js"></script>
-    <script type="text/javascript">
-        pageLocateInit(getCookie('type'));
-        renderUserData();
-    </script>
-
 </head>
 
 <body>
@@ -87,7 +79,7 @@
                         <!--brand img-->
                         <div class="col-6  collapse-brand">
                             <a class="" href="#">
-                                <img src="../assets/img/brand/brand-logo-tr.png">
+                                <img src="../assets/img/brand/brand-logo-tr.png" alt="JLU logo">
                             </a>
                         </div>
                         <div class="col-6 collapse-close">
@@ -207,7 +199,7 @@
 
                             <div class="dropdown-divider"></div>
 
-                            <a href="#!" class="dropdown-item logout-btn">
+                            <a href="#" class="dropdown-item logout-btn">
                                 <i class="ni ni-user-run"></i>
                                 <span>Logout</span>
                             </a>
@@ -217,15 +209,19 @@
             </div>
         </nav>
         <!-- End Navbar -->
-        <!--header-->
+        <!-- container for MD-->
         <div class="container-fluid display-container" >
-            <div class="markdown-container">
-
+            <div class="mt-4 mt-md-0 px-4 p-md-0 markdown-container">
             </div>
         </div>
     </div>
-    <script>
-        window.onload = renderMd("../php/course_modules.php");
+    <script type="text/javascript">
+        pageLocateInit('t&s');
+        renderUserData();
+        /*render the md file*/
+        $(document).ready(function() {
+            renderMd("../php/course_modules.php");
+        });
     </script>
 </body>
 
