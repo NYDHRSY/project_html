@@ -1,0 +1,21 @@
+textarea#input_words:focus,
+textarea#input_words {
+    resize: none;
+    height: 8rem;
+    border: 2px dashed rgba(137, 101, 224, .5);
+}
+
+ul {
+    list-style: none;
+}
+
+.comment-item{
+    padding: 1rem;
+}
+.comment-item:nth-child(even) {
+    background: rgba(242, 242, 242, 0.57);
+}
+
+.comment-item-content {
+    text-indent: 2em;
+}

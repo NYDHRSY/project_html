@@ -1,0 +1,94 @@
+ul {
+    list-style: none;
+}
+
+.mail-item:nth-child(even) {
+    background: rgba(242, 242, 242, 0.57)!important;
+}
+
+/*xs*/
+@media (max-width: 576px) {
+    .mail-list .mail-item .mail-head{
+        min-width: 48px;
+        min-height: 48px;
+    }
+}
+/*sm*/
+@media (min-width: 576px) {
+    .mail-list .mail-item .mail-head{
+        min-width: 58px;
+        min-height: 58px;
+    }
+}
+/*md*/
+@media (min-width: 768px) {
+    .mail-list .mail-item .mail-head{
+        min-width: 48px;
+        min-height: 48px;
+    }
+}
+/*lg*/
+@media (min-width: 960px) {
+    .mail-list .mail-item .mail-head{
+        min-width: 58px;
+        min-height: 58px;
+    }
+}
+
+.mail-list .mail-item .mail-content-row .mail-content{
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space: nowrap;
+}
+
+
+
+/*view*/
+.mail-container{
+    border: none;
+    box-shadow: 0 0 0.5rem rgba(50,50,50,0.5)!important;
+}
+.mail-container #mail-detail-container{
+    background-color: #fafafa !important;
+}
+.mail-container .mail-detail-container .mail-content-row .mail-content{
+    text-indent: 2em;
+}
+@media (max-width: 768px) {
+    .mail-container .mail-detail-container .mail-content-row .mail-content{
+        height: 15rem;
+    }
+}
+@media (min-width: 768px) {
+    .mail-container .mail-detail-container .mail-content-row .mail-content{
+        height: 20rem;
+    }
+}
+
+
+.send-mail-body input{
+    box-sizing: border-box;
+    font-size: 0.875rem;
+    line-height: 0.875rem;
+    color: inherit;
+    height: 2rem;
+    /*width: 100%;*/
+    border-radius: 0.2rem;
+}
+.send-mail-body textarea {
+    box-sizing: border-box;
+    resize: none;
+    height: 15rem;
+    font-size: 0.875rem;
+    line-height: 0.875rem;
+    color: inherit;
+    width: 100%;
+    border-radius: 0.2rem;
+}
+.send-mail-body .input-label{
+    width: 3rem;
+    font-size: 0.875rem;
+}
+.send-mail-body hr{
+    border-top: 2px;
+}

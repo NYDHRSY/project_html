@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    overflow: hidden;
+}
+p {
+    font-size: 13px;
+    line-height: 10px;
+    /*background:  url(../assets/file/cxk.gif) no-repeat;*/
+    background-size: contain;
+    background: url(../file/tumblr_nptm6toUmf1rvfm5no1_500.gif) no-repeat fixed center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0) ;
+    font-weight: 900;
+    margin-top: 0;
+}
