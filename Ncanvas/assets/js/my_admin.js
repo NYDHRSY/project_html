@@ -1,5 +1,5 @@
 
-/*check the input*/
+/*check the input for ADMIN*/
 function checkFD(fd) {
     let namelist = ["name", "uid", "psw", "type"];
     for (var index = 0; index < namelist.length; index += 1) {

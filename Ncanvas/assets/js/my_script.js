@@ -383,6 +383,7 @@ function quizEditRulesAlert() {
 }
 function validForm(formID) {
     let flag = true;
+    // let flag = typeof($("#"+formID+" input")[0]) == "undefined";
     $("#"+formID+" input").each(function (i,item) {
         flag = flag && item.validity.valid;
         // if(!item.validity.valid){

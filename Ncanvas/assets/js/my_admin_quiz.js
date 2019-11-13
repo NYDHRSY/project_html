@@ -140,12 +140,11 @@ function renderTeacherQuizlist(data_url,add_url,edit_url,del_url) {
                     $("#"+qltid+"-question-list-add-btn").after("" +
                         "<div class=\"card-body py-3 download-container\">\n" +
                         "    <span>\n" +
-                        "    <a class='text-gray' href='"+qllink+"' target=\"_blank\">Correct the homework</a>"+
+                        "    <a class='text-gray' href='../php/correctHW.php?dir="+qllink+"' target=\"_blank\">Correct the homework</a>"+
                         "    </span>\n" +
                         "</div>"
                     );
                 }
-
             }
         }
 
@@ -367,7 +366,7 @@ function renderTeacherQuizlist(data_url,add_url,edit_url,del_url) {
                 "    </td>\n" +
                 "</tr>\n" +
                 "<tr class=\"border-bottom-0 obj-question-row\" id=\"new-question-row\">\n" +
-                "    <td colspan=\"4\" class=\"p-0 border-top-0\">\n" +
+                "    <td colspan=\"5\" class=\"p-0 border-top-0\">\n" +
                 "        <form class=\"collapse show\" action=\"\" id=\"new-question-form\" readonly=\"readonly\">\n" +
                 "            <hr class=\"m-0 mx-3\">\n" +
                 "            <div class=\"card-body py-3 question-container obj-question\">\n" +
@@ -828,7 +827,7 @@ function renderTeacherQuizlist(data_url,add_url,edit_url,del_url) {
                 "    </td>\n" +
                 "</tr>\n" +
                 "<tr class=\"border-bottom-0 sub-question-row\" id=\"new-question-row\">\n" +
-                "    <td colspan=\"4\" class=\"p-0 border-top-0\">\n" +
+                "    <td colspan=\"5\" class=\"p-0 border-top-0\">\n" +
                 "        <form class=\"collapse show\" action=\"\" id=\"new-question-form\" readonly=\"readonly\">\n" +
                 "            <hr class=\"m-0 mx-3\">\n" +
                 "            <div class=\"card-body py-3 question-container sub-question\">\n" +
@@ -1501,7 +1500,7 @@ function renderAdminQuizlist(data_url,add_url,edit_url,del_url) {
                 "    </td>\n" +
                 "</tr>\n" +
                 "<tr class=\"border-bottom-0 obj-question-row\" id=\"new-question-row\">\n" +
-                "    <td colspan=\"4\" class=\"p-0 border-top-0\">\n" +
+                "    <td colspan=\"5\" class=\"p-0 border-top-0\">\n" +
                 "        <form class=\"collapse show\" action=\"\" id=\"new-question-form\" readonly=\"readonly\">\n" +
                 "            <hr class=\"m-0 mx-3\">\n" +
                 "            <div class=\"card-body py-3 question-container obj-question\">\n" +
@@ -1962,7 +1961,7 @@ function renderAdminQuizlist(data_url,add_url,edit_url,del_url) {
                 "    </td>\n" +
                 "</tr>\n" +
                 "<tr class=\"border-bottom-0 sub-question-row\" id=\"new-question-row\">\n" +
-                "    <td colspan=\"4\" class=\"p-0 border-top-0\">\n" +
+                "    <td colspan=\"5\" class=\"p-0 border-top-0\">\n" +
                 "        <form class=\"collapse show\" action=\"\" id=\"new-question-form\" readonly=\"readonly\">\n" +
                 "            <hr class=\"m-0 mx-3\">\n" +
                 "            <div class=\"card-body py-3 question-container sub-question\">\n" +
